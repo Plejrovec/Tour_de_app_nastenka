@@ -4,7 +4,8 @@
     
     <link rel="stylesheet" href="css/styles.css">  
 </head> 
-
+<link rel = "icon" href ="../icon.png" 
+        type = "image/x-icon">
 
 
 
