@@ -6,10 +6,7 @@ class Api
     private $secret = 'a43dec615d7f1be1930c4bd8768ddb08';
     private $url = 'https//tda.knapa.cz/';
 
-    private $headers = array(
-        'accept: application/json',
-        'x-access-token: ' . $this->secret
-    );
+    private $headers;
 
     public $ServerUptime;
     public $ServerPlatform;
@@ -19,8 +16,12 @@ class Api
     public $Programmers = array();
 
     public $TodaysData = array();
-    
+    public $AllData = array();
     public function __construct() {
+        $this->headers = array(
+            'accept: application/json',
+            'x-access-token: ' . $this->secret
+        );
         $this->GetAllData();
         $this->GetLastComms();
         $this->ReturnProgrammers();
@@ -184,6 +185,6 @@ class Api
             $numOfDelelted +=$a["lines_removed"];
         }
 
-        $this->TodaysData =array("number_of_added" => $numOfAdded, "number_of_deleted" => $numOfDelelted, "number_of_comms" => $numOfComms);
+        $this->AllData =array("number_of_added" => $numOfAdded, "number_of_deleted" => $numOfDelelted, "number_of_comms" => $numOfComms);
     }
 }
