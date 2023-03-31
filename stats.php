@@ -40,9 +40,9 @@ $p = new Api();
 			<h2>Programátoři: </h2>
         <?php foreach($p->Programmers as $pro): ?>
       <div class="programatori">
-        <p>Jméno: <?=$pro['name']?></p>
-        <p>Příjmení: <?=$pro['surname']?> </p>
-        <p>Přezdívka: <?=$pro['nick']?> </p>
+        <p>Jméno: <?=$pro->name?></p>
+        <p>Příjmení: <?=$pro->surname?> </p>
+        <p>Přezdívka: <?=$pro->nick?> </p>
       </div>
       <?php endforeach ?>
 		</div>
