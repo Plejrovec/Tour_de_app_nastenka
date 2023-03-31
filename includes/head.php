@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/index.css">
-    <script src="app.js" defer></script>
+    
     <title>Nástěnka</title>
 </head>
 <body>

@@ -9,7 +9,7 @@
     width:50%;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 0px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -32,7 +32,7 @@ body {
     margin:2rem;
     background-color:orange;
     width:30rem;
-    height: 20rem;
+    height: 22rem;
 }
 .text{
     background-color: orange;
@@ -47,8 +47,8 @@ body {
 .close{
     cursor: pointer;
     position: relative;
-    top: 0%;
-    right: 0%;
+    top: -16rem;
+    right: -27rem;
     border: none;
     background-color: orange;
 
@@ -74,7 +74,7 @@ body {
 .sign{
     background-color: orange;
     position: relative;
-    
+    font-size:1.1rem;
     width:5rem;
     height: 3rem;
 }
@@ -126,3 +126,12 @@ padding:1em;
 ul li{
 margin:1em;
 }
+.close2{
+    cursor: pointer;
+    position: relative;
+    top: -16rem;
+    right: -6.5rem;
+    border: none;
+    
+
+  }

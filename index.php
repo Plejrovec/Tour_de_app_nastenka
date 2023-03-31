@@ -26,9 +26,16 @@ $result = $n->read();
     <?php while($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
   <li>
     <a href="#">
-      <h2><?=$row["text"]?></h2>
-      <p><?=$row["signature"]?></p>
+    <br>
+      <p wrap="soft" style="overflow:hidden; resize:none; overflow-wrap: break-word;"><?=$row["text"]?></p>
+      <br><br><br>
+      <p wrap="soft" style="text-align:right;"><?=$row["signature"]?></p>
     </a>
+    <br><br>
+    <div class=close2>
+        <button style="background-color: yellow; width:3rem ;" onclick="editForm()">Edit</button>
+        <button style="background-color: red; width:3rem ;" onclick="DeleteForm()">Del</button>
+    </div>
   </li>
   <?php endwhile?>
 </ul>
@@ -66,6 +73,20 @@ $result = $n->read();
             document.getElementById("myForm1").style.display = "block";
         } function closeForm() {
             document.getElementById("myForm").style.display = "none";
+        }
+        function DeleteEntry(id){
+            data={"id":id}
+            jQuery,ajax({
+                url: "parsers/deleteneco.php",
+                method:'post',
+                data:data,
+                success:function(d){
+                    location:reload()},
+                error:function(){
+                    alert("nelze smazat záznam")
+                
+                }
+            })
         }
 
 
