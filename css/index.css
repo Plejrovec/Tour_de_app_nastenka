@@ -126,3 +126,12 @@ padding:1em;
 ul li{
 margin:1em;
 }
+.close2{
+    cursor: pointer;
+    position: relative;
+    top: -16rem;
+    right: -6.5rem;
+    border: none;
+    
+
+  }
