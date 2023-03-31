@@ -12,6 +12,60 @@ include "includes/head.php";
                 style="overflow:hidden; resize:none;"></textarea>
             <button class="button2">Submit</button>
         </div>
+        
+
+</div>
+
+<button class="button" onclick="openForm()">+</button>
+<ul>
+  <li>
+    <a href="#">
+      <p>Title #1</p>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #1</p>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+    <li>
+    <a href="#">
+      <p>Title #1</p>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+
+
+</ul>    
+    <form class="form" action="/action_page.php" id=myForm>
+        <div class=sticky-note>
+            <button class=close onclick="closeForm()">x</button>
+            <textarea class="text" rows="14" cols="10" wrap="soft" maxlength="120"
+                style="overflow:hidden; resize:none;"></textarea>
+            <textarea class="sign" rows="3" cols="10" wrap="soft" maxlength="20"
+                style="overflow:hidden; resize:none;"></textarea>
+            <button class="button2">Submit</button>
+        </div>
 
     </form>
     <form class="form" action="/action_page.php" id=myForm1>
@@ -24,49 +78,6 @@ include "includes/head.php";
         </div>
 
     </form>
-    
-
-    <button class="button" onclick="openForm()">+</button>
-    <ul>
-        <li>
-            <a href="#">
-                <p>Title #1</p>
-                <p>Text Content #1</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <p>Title #2</p>
-                <p>Text Content #2</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <p>Title #1</p>
-                <p>Text Content #1</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <p>Title #2</p>
-                <p>Text Content #2</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <p>Title #1</p>
-                <p>Text Content #1</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <p>Title #2</p>
-                <p>Text Content #2</p>
-            </a>
-        </li>
-
-
-    </ul>
 
     <script>
         function openForm() {
