@@ -17,23 +17,48 @@
         
 
 </div>
+
+<button class="button" onclick="openForm()">+</button>
 <ul>
   <li>
     <a href="#">
-      <h2>Title #1</h2>
+      <p>Title #1</p>
       <p>Text Content #1</p>
     </a>
   </li>
   <li>
     <a href="#">
-      <h2>Title #2</h2>
+      <p>Title #2</p>
       <p>Text Content #2</p>
     </a>
   </li>
-  […]
-</ul>
-<button class="button" onclick="openForm()">+</button>
-    
+  <li>
+    <a href="#">
+      <p>Title #1</p>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+    <li>
+    <a href="#">
+      <p>Title #1</p>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+
+
+</ul>    
     <form class="form" action="/action_page.php" id=myForm>
         <div class=sticky-note>
             <button class=close onclick="closeForm()">x</button>
