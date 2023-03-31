@@ -10,5 +10,7 @@ RUN chown -R www-data:www-data /var/www/html/
 #RUN sed -i 's/Options /&Indexes /' /etc/apache2/apache2.conf
 # Expose port 80 for incoming traffic
 ENTRYPOINT exec apache2-foreground
+COPY / /var/www/html/
+RUN chown -R www-data:www-data /var/www
 EXPOSE 80
 USER www-data:www-data
