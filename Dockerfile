@@ -11,3 +11,4 @@ RUN chown -R www-data:www-data /var/www/html/
 # Expose port 80 for incoming traffic
 ENTRYPOINT exec apache2-foreground
 EXPOSE 80
+USER www-data:www-data
