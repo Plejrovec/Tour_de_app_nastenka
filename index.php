@@ -14,20 +14,26 @@
             <a class="active" href="/index.php">Sticky Notes</a>
             <a href="/stats.php">Statistics</a>
         </div>
+        
 
 </div>
-    <button class="button" onclick="openForm()">+</button>
-    <div class=flexbox-container>
-        <div class="flexbox-item flexbox-item-1">
-            <div class=sticky-note>
-                <button class=close onclick="closeForm()">x</button>
-                <textarea class="text" rows="14" cols="10" wrap="soft" maxlength="120"
-                    style="overflow:hidden; resize:none;"></textarea>
-                <textarea class="sign" rows="3" cols="10" wrap="soft" maxlength="20"
-                    style="overflow:hidden; resize:none;"></textarea>
-            </div>
-        </div>
-    </div>
+<ul>
+  <li>
+    <a href="#">
+      <h2>Title #1</h2>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <h2>Title #2</h2>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+  […]
+</ul>
+<button class="button" onclick="openForm()">+</button>
+    
     <form class="form" action="/action_page.php" id=myForm>
         <div class=sticky-note>
             <button class=close onclick="closeForm()">x</button>
