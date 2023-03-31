@@ -44,7 +44,7 @@ body {
     margin-bottom: 0;
     width:25rem;
     height: 15rem;
-    font-size: 2.5rem;
+    font-size: 2.5em;
 
 }
 .close{
@@ -63,6 +63,8 @@ body {
     margin:1rem;
     top: 20%;
     left:50%;
+    width:2rem;
+    height:2rem;
 }
 .button2{
     background-color: aquamarine;
@@ -84,6 +86,7 @@ body {
     width: 40rem;
     height: 20rem;
     text-align: center;
+    z-index: 9;
 }
 .flexbox-container{
     display: flex;
@@ -99,10 +102,6 @@ body {
     margin:0;
     padding:0;
   }
-h2 {
-font-weight: bold;
-font-size: 2rem;
-}
 p {
 font-size: 1rem;
 font-weight: normal;
@@ -120,8 +119,8 @@ text-decoration:none;
 color:#000;
 background:#ffc;
 display:block;
-height:10em;
-width:10em;
+height:12em;
+width:15em;
 padding:1em;
 }
 ul li{
