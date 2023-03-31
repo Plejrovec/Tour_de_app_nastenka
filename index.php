@@ -5,7 +5,6 @@ include "includes/head.php";
 
         
 
-</div>
 <?php 
 require "models/database.php";
 require "models/note.php";
@@ -33,7 +32,6 @@ $result = $n->read();
   </li>
   <?php endwhile?>
 </ul>
-<button class="button" onclick="openForm()">+</button>
     
     <form class="form" action="/parsers/savenote.php" method="post" id=myForm>
         <div class=sticky-note>
