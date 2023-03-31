@@ -3,8 +3,7 @@
     overflow: hidden;
 
 }
-  
-/* Style the links inside the navigation bar */
+
 .topnav a {
     float: left;
     width:50%;
@@ -14,14 +13,12 @@
     text-decoration: none;
     font-size: 17px;
 }
-  
-/* Change the color of links on hover */
+
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
-  
-/* Add a color to the active/current link */
+
 .topnav a.active {
     background-color: #04AA6D;
     color: white;
@@ -82,7 +79,10 @@ body {
     height: 3rem;
 }
 .form
-{   display: none;
+
+{
+    margin-top: 0em;
+    display: none;
     width: 40rem;
     height: 20rem;
     text-align: center;

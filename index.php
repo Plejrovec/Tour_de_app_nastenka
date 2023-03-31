@@ -1,68 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="app.js" defer></script>
-    <title>Nástěnka</title>
-</head>
-
+<?php
+require_once 'config/init.php';
+include "includes/head.php";
+?>
 <body>
-<div class="topnav">
-        <div class="topnav-centered">
-            <a class="active" href="/index.php">Sticky Notes</a>
-            <a href="/stats.php">Statistics</a>
-
+    <form class="form" action="/action_page.php" id=myForm>
+        <div class=sticky-note>
+            <button class=close onclick="closeForm()">x</button>
+            <textarea class="text" rows="14" cols="10" wrap="soft" maxlength="120"
+                style="overflow:hidden; resize:none;"></textarea>
+            <textarea class="sign" rows="3" cols="10" wrap="soft" maxlength="20"
+                style="overflow:hidden; resize:none;"></textarea>
+            <button class="button2">Submit</button>
         </div>
         
 
 </div>
-<?php 
-require "models/database.php";
-require "models/note.php";
-require "config/init.php";
 
-$result = $n->read();
-    // get row count
-    $num = $result->rowCount();
-
-    // Check if any posts
-    if($num > 0) {
-        // Record array 
-        $notes = array();
-        $notes['data'] = array();
-        }
-?>
-
+<button class="button" onclick="openForm()">+</button>
 <ul>
-    <?php while($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
   <li>
     <a href="#">
-      <h2><?=$row["text"]?></h2>
-      <p><?=$row["signature"]?></p>
+      <p>Title #1</p>
+      <p>Text Content #1</p>
     </a>
   </li>
-  <?php endwhile?>
-</ul>
-<button class="button" onclick="openForm()">+</button>
-    
-    <form class="form" action="/parsers/savenote.php" method="post" id=myForm>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #1</p>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+    <li>
+    <a href="#">
+      <p>Title #1</p>
+      <p>Text Content #1</p>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <p>Title #2</p>
+      <p>Text Content #2</p>
+    </a>
+  </li>
+
+
+</ul>    
+    <form class="form" action="/action_page.php" id=myForm>
         <div class=sticky-note>
             <button class=close onclick="closeForm()">x</button>
-            <textarea name="text" class="text" rows="14" cols="10" wrap="soft" maxlength="120"
+            <textarea class="text" rows="14" cols="10" wrap="soft" maxlength="120"
                 style="overflow:hidden; resize:none;"></textarea>
-            <textarea name = "sign" class="sign" rows="3" cols="10" wrap="soft" maxlength="20"
+            <textarea class="sign" rows="3" cols="10" wrap="soft" maxlength="20"
                 style="overflow:hidden; resize:none;"></textarea>
             <button class="button2">Submit</button>
         </div>
 
     </form>
-    <form class="form" action="" method="post" id=EditForm1>
+    <form class="form" action="/action_page.php" id=myForm1>
         <div class=sticky-note>
-            <textarea name="text" class="text" rows="14" cols="10" wrap="soft" maxlength="120"
+            <textarea class="text" rows="14" cols="10" wrap="soft" maxlength="120"
                 style="overflow:hidden; resize:none;"></textarea>
-            <textarea name = "sign" class="sign" rows="3" cols="10" wrap="soft" maxlength="20"
+            <textarea class="sign" rows="3" cols="10" wrap="soft" maxlength="20"
                 style="overflow:hidden; resize:none;"></textarea>
             <input class="button2" value="Submit">
         </div>
