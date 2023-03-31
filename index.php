@@ -1,64 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="app.js" defer></script>
-    <title>Nástěnka</title>
-</head>
-
+<?php
+require_once 'config/init.php';
+include "includes/head.php";
+?>
 <body>
-<div class="topnav">
-        <div class="topnav-centered">
-            <a class="active" href="/index.php">Sticky Notes</a>
-            <a href="/stats.php">Statistics</a>
-        </div>
-        
-
-</div>
-
-<button class="button" onclick="openForm()">+</button>
-<ul>
-  <li>
-    <a href="#">
-      <p>Title #1</p>
-      <p>Text Content #1</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <p>Title #2</p>
-      <p>Text Content #2</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <p>Title #1</p>
-      <p>Text Content #1</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <p>Title #2</p>
-      <p>Text Content #2</p>
-    </a>
-  </li>
-    <li>
-    <a href="#">
-      <p>Title #1</p>
-      <p>Text Content #1</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <p>Title #2</p>
-      <p>Text Content #2</p>
-    </a>
-  </li>
-
-
-</ul>    
     <form class="form" action="/action_page.php" id=myForm>
         <div class=sticky-note>
             <button class=close onclick="closeForm()">x</button>
@@ -80,6 +24,49 @@
         </div>
 
     </form>
+    
+
+    <button class="button" onclick="openForm()">+</button>
+    <ul>
+        <li>
+            <a href="#">
+                <p>Title #1</p>
+                <p>Text Content #1</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <p>Title #2</p>
+                <p>Text Content #2</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <p>Title #1</p>
+                <p>Text Content #1</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <p>Title #2</p>
+                <p>Text Content #2</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <p>Title #1</p>
+                <p>Text Content #1</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <p>Title #2</p>
+                <p>Text Content #2</p>
+            </a>
+        </li>
+
+
+    </ul>
 
     <script>
         function openForm() {
