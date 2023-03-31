@@ -26,8 +26,9 @@ $result = $n->read();
     <?php while($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
   <li>
     <a href="#">
-      <h2><?=$row["text"]?></h2>
-      <p><?=$row["signature"]?></p>
+      <p wrap="soft" style="overflow:hidden; resize:none; overflow-wrap: break-word;"><?=$row["text"]?></p>
+      <br><br><br>
+      <p wrap="soft" style="text-align:right;"><?=$row["signature"]?></p>
     </a>
   </li>
   <?php endwhile?>

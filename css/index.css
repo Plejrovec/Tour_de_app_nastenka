@@ -32,7 +32,7 @@ body {
     margin:2rem;
     background-color:orange;
     width:30rem;
-    height: 20rem;
+    height: 22rem;
 }
 .text{
     background-color: orange;
@@ -47,8 +47,8 @@ body {
 .close{
     cursor: pointer;
     position: relative;
-    top: 0%;
-    right: 0%;
+    top: -16rem;
+    right: -27rem;
     border: none;
     background-color: orange;
 
