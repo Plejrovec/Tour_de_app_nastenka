@@ -1,0 +1,29 @@
+body{
+    font: normal 16px Verdana, Arial, sans-serif;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+  text-align: center;
+		}
+.section{
+  padding: 20px;
+  box-sizing: border-box;
+  border: 5px solid green;
+		}
+.top{
+  height: 95px;
+  border: 5px solid green;  
+}
+.top p{
+  margin: 20px;
+  text-align: center;
+}
+.programatori{
+  border: 5px solid darkgreen;
+}
+.commity{
+  border: 5px solid darkgreen;
+}
