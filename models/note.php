@@ -21,8 +21,6 @@ class Note
         // prepared statement
         $stmt = $this->conn->prepare($query);
 
-        $stmt->bindParam(':id',$this->id);
-
         // Execute query
         $stmt->execute();
 
