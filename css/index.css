@@ -74,7 +74,7 @@ body {
 .sign{
     background-color: orange;
     position: relative;
-    
+    font-size:1.1rem;
     width:5rem;
     height: 3rem;
 }
