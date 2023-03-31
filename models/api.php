@@ -47,7 +47,6 @@ class Api
         curl_close($ch);
         // Process the response data
         $commitdata = json_decode($response);
-        var_dump($commitdata);
         foreach($commitdata as $a) {
             curl_setopt($ch, CURLOPT_URL, $this->url . "user/" .$a->creator_id);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
