@@ -4,7 +4,7 @@ class Api
 
     private $ch;
     private $secret = 'a43dec615d7f1be1930c4bd8768ddb08';
-    private $url = 'https//tda.knapa.cz/';
+    private $url = 'https://tda.knapa.cz/';
 
     private $headers;
 
@@ -35,7 +35,7 @@ class Api
         $ch = curl_init();
 
         // Set the URL and other options
-        curl_setopt($ch, CURLOPT_URL, $this->url . "latest/5");
+        curl_setopt($ch, CURLOPT_URL, $this->url . "commit/latest/5");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
@@ -45,12 +45,11 @@ class Api
 
         // Close the cURL resource
         curl_close($ch);
-
         // Process the response data
         $commitdata = json_decode($response);
-
+        var_dump($commitdata);
         foreach($commitdata as $a) {
-            curl_setopt($ch, CURLOPT_URL, $this->url . "user/" .$a["user_id"]);
+            curl_setopt($ch, CURLOPT_URL, $this->url . "user/" .$a->creator_id);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
             curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
@@ -61,7 +60,7 @@ class Api
 
             // Close the cURL resource
             curl_close($ch);
-            $this->LastComms[] = array("nick" => $userdata[0]["nick"], "time" =>date('H:i:s', strtotime($a["date"])), "lines_added" => $a["lines_added"], "lines_removed" => $a["lines_removed"], "description" => $a["description"] );
+            $this->LastComms[] = array("nick" => $userdata->nick, "time" =>date('H:i:s', strtotime($a->date)), "lines_added" => $a->lines_added, "lines_removed" => $a->lines_removed, "description" => $a->description );
         }
 
 
@@ -113,12 +112,9 @@ class Api
 
         // Process the response data
         $data = json_decode($response);
-
-        $date = DateTime::createFromFormat('Y-m-d\TH:i:sO', $data[0]["boot_time"]);
-
         // Format the date in a readable way
-        $this->ServerUptime = $date->format('F j, Y \a\t g:i:s A T');
-        $this->ServerPlatform = $data[0]['platform'];
+        $this->ServerUptime = $data->boot_time;
+        $this->ServerPlatform = $data->platform;
 
 
         // Output the formatted date
@@ -145,13 +141,14 @@ class Api
 
         // Process the response data
         $data = json_decode($response);
-        
         $numOfAdded=0;
         $numOfDelelted=0;
-        $numOfComms = count($data);
+        $numOfComms=0;
         foreach($data as $a) {
-            $numOfAdded +=$a["lines_added"];
-            $numOfDelelted +=$a["lines_removed"];
+            var_dump($a);
+            $numOfComms+=1;
+            $numOfAdded +=$a->lines_added;
+            $numOfDelelted +=$a->lines_removed;
         }
 
         $this->TodaysData =array("number_of_added" => $numOfAdded, "number_of_deleted" => $numOfDelelted, "number_of_comms" => $numOfComms);
@@ -176,13 +173,12 @@ class Api
 
         // Process the response data
         $data = json_decode($response);
-        
         $numOfAdded=0;
         $numOfDelelted=0;
         $numOfComms = count($data);
         foreach($data as $a) {
-            $numOfAdded +=$a["lines_added"];
-            $numOfDelelted +=$a["lines_removed"];
+            $numOfAdded +=$a->lines_added;
+            $numOfDelelted +=$a->lines_removed;
         }
 
         $this->AllData =array("number_of_added" => $numOfAdded, "number_of_deleted" => $numOfDelelted, "number_of_comms" => $numOfComms);
