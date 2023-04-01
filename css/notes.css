@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    background: white;
+}
+  
+.sticky-note{
+    margin:2rem;
+    background-color:orange;
+    width:30rem;
+    height: 22rem;
+}
+.text{
+    background-color: orange;
+    margin-top:2rem;
+
+    margin-bottom: 0;
+    width:25rem;
+    height: 15rem;
+    font-size: 2.5em;
+
+}
+.close{
+    cursor: pointer;
+    position: relative;
+    top: -16rem;
+    right: -27rem;
+    border: none;
+    background-color: orange;
+
+  }
+.button{
+    background-color: aquamarine;
+    color:black ;
+    position: relative;
+    margin:1rem;
+    top: 20%;
+    left:50%;
+    width:2rem;
+    height:2rem;
+}
+.button2{
+    background-color: aquamarine;
+    color:black ;
+    position: relative;
+    margin:1rem;
+    top:0;
+    right:0;
+}
+.sign{
+    background-color: orange;
+    position: relative;
+    font-size:1.1rem;
+    width:5rem;
+    height: 3rem;
+}
+.form
+
+{
+    margin-top: 0em;
+    display: none;
+    width: 40rem;
+    height: 20rem;
+    text-align: center;
+    z-index: 9;
+}
+.flexbox-container{
+    display: flex;
+    justify-content: flex-start;
+}
+.flexbox-item{
+    width:30rem;
+    margin:10px;
+    
+}
+  
+*{
+    margin:0;
+    padding:0;
+  }
+p {
+font-size: 1rem;
+font-weight: normal;
+}
+ul,li{
+list-style:none;
+}
+ul{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+ul li a{
+text-decoration:none;
+color:#000;
+background:#ffc;
+display:block;
+height:12em;
+width:15em;
+padding:1em;
+}
+ul li{
+margin:1em;
+}
+.close2{
+    cursor: pointer;
+    position: relative;
+    top: -16rem;
+    right: -6.5rem;
+    border: none;
+    
+
+  }

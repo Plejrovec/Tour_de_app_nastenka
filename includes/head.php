@@ -4,17 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     
     <title>Nástěnka</title>
-</head>
-<body>
-<div class="topnav">
-        <div class="topnav-centered">
-            <a class="active" href="/index.php">Sticky Notes</a>
-            <a href="stats.php">Statistics</a>
-        </div>
-
-
-    </div>
-</body>
-</html>

@@ -1,11 +1,16 @@
 <?php
 include "includes/head.php";
 ?>
+
+<link rel="stylesheet" href="css/notes.css">
+</head>
+
 <body>
 
         
 
 <?php 
+include "includes/topnav.php";
 require "models/database.php";
 require "models/note.php";
 require "config/init.php";
@@ -34,7 +39,7 @@ $result = $n->read();
     <br><br>
     <div class=close2>
         <button style="background-color: yellow; width:3rem ;" onclick="editForm()">Edit</button>
-        <button style="background-color: red; width:3rem ;" onclick="DeleteForm()">Del</button>
+        <button style="background-color: red; width:3rem ;" onclick="DeleteEntry(<?=$row['id'] ?>)">Del</button>
     </div>
   </li>
   <?php endwhile?>
@@ -76,12 +81,12 @@ $result = $n->read();
         }
         function DeleteEntry(id){
             data={"id":id}
-            jQuery,ajax({
-                url: "parsers/deleteneco.php",
+            jQuery.ajax({
+                url: 'parsers/deleteneco.php',
                 method:'post',
-                data:data,
-                success:function(d){
-                    location:reload()},
+                data: data,
+                success:function(){
+                    location.reload();},
                 error:function(){
                     alert("nelze smazat záznam")
                 

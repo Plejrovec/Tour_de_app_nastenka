@@ -31,7 +31,6 @@ class Api
 
     public function GetLastComms()
     {
-
         $ch = curl_init();
 
         // Set the URL and other options
@@ -59,12 +58,14 @@ class Api
 
             // Close the cURL resource
             curl_close($ch);
-            $this->LastComms[] = array("nick" => $userdata->nick, "time" =>date('H:i:s', strtotime($a->date)), "lines_added" => $a->lines_added, "lines_removed" => $a->lines_removed, "description" => $a->description );
+            // Add to LastComms
+            $this->LastComms[] = array(
+                "nick" => $userdata->nick,
+                "time" =>date('H:i:s', strtotime($a->date)), 
+                "lines_added" => $a->lines_added, 
+                "lines_removed" => $a->lines_removed, 
+                "description" => $a->description );
         }
-
-
-        
-
     }
 
     public function ReturnProgrammers()
@@ -111,8 +112,19 @@ class Api
 
         // Process the response data
         $data = json_decode($response);
+        
+        $startDate = strtotime($data->boot_time);
+
+        $uptime = time() - $startDate;
+
+        $uptimeDays = floor($uptime / (60*60*24));
+        $uptimeHours = floor(($uptime % (60*60*24))/(60*60));
+        $uptimeMinutes = floor(($uptime % (60*60))/60);
+        $uptimeSeconds = $uptime % 60;
+        
         // Format the date in a readable way
         $this->ServerUptime = $data->boot_time;
+
         $this->ServerPlatform = $data->platform;
 
 
@@ -125,7 +137,7 @@ class Api
         $ch = curl_init();
 
         // Set the URL and other options
-        curl_setopt($ch, CURLOPT_URL, $this->url . "commit/". date('Y-m-d\TH:i:sO', strtotime('today')));
+        curl_setopt($ch, CURLOPT_URL, $this->url . "commit/filter/". date('c', strtotime('today')));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         
