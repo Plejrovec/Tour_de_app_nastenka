@@ -123,7 +123,7 @@ class Api
         $uptimeSeconds = $uptime % 60;
         
         // Format the date in a readable way
-        $this->ServerUptime = $data->boot_time;
+        $this->ServerUptime = "server running for: " . $uptimeDays . " days " . $uptimeHours . " hours " . $uptimeMinutes . " minutes " . $uptimeSeconds . " seconds";
 
         $this->ServerPlatform = $data->platform;
 
