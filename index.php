@@ -45,7 +45,7 @@ $result = $n->read();
   <?php endwhile?>
 </ul>
     
-    <form class="form" action="/parsers/savenote.php" method="post" id=myForm>
+    <form class="form" action="parsers/savenote.php" method="post" id=myForm>
         <div class=sticky-note>
             <button class=close onclick="closeForm()">x</button>
             <textarea name="text" class="text" rows="14" cols="10" wrap="soft" maxlength="120"

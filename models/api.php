@@ -22,10 +22,8 @@ class Api
             'accept: application/json',
             'x-access-token: ' . $this->secret
         );
-        $this->GetAllData();
-        $this->GetLastComms();
-        $this->ReturnProgrammers();
-        $this->ReturnBaseStats();
+    
+        
         $this->GetTodaysData();
     }
 
@@ -47,6 +45,8 @@ class Api
         // Process the response data
         $commitdata = json_decode($response);
         foreach($commitdata as $a) {
+            $ch = curl_init();
+
             curl_setopt($ch, CURLOPT_URL, $this->url . "user/" .$a->creator_id);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -64,7 +64,10 @@ class Api
                 "time" =>date('H:i:s', strtotime($a->date)), 
                 "lines_added" => $a->lines_added, 
                 "lines_removed" => $a->lines_removed, 
-                "description" => $a->description );
+                "description" => $a->description,
+                "avatar_url" => $userdata->avatar_url,
+            
+            );
         }
     }
 

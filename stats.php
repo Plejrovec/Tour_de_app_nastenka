@@ -11,7 +11,11 @@ include "includes/head.php";
   require "models/api.php";
 
   $p = new Api();
-
+  $p->GetAllData();
+  $p->GetLastComms();
+  $p->ReturnProgrammers();
+  $p->ReturnBaseStats();;
+  
 ?>
   <div class="top">
     <p>Up-time serveru: <?= $p->ServerUptime?></p>
@@ -34,12 +38,13 @@ include "includes/head.php";
     </div>
   </div>
   <div class="container">
-		<div class="section">
+		<div class="section flex">
 			<h2>Programátoři: </h2>
         <?php foreach($p->Programmers as $pro): ?>
       <div class="programatori">
-        <p>Jméno: <?=$pro->name?></p>
-        <p>Příjmení: <?=$pro->surname?> </p>
+        <img src="<?=$pro->avatar_url?>" alt="obrázek" width="50rem" >
+        <p><?=$pro->name." ".$pro->surname?> </p>
+
         <p>Přezdívka: <?=$pro->nick?> </p>
       </div>
       <?php endforeach ?>
@@ -48,12 +53,23 @@ include "includes/head.php";
 			<h2>Poslední commity:</h2>
             <?php foreach($p->LastComms as $last): ?>
       <div class="commity">
+      <img src="<?=$last["avatar_url"]?>" alt="obrázek" width="50rem" >
         <p>Jméno: <?= $last['nick'] ?></p>
         <p>Čas: <?= $last['time'] ?></p>
         <p>Popis: <?= $last['description'] ?></p>
       </div>
       <?php endforeach ?>
 		</div>
-	</div>
+	</div>¨
+<script> 
+$(document).ready(function() {
+            setInterval(function() {
+                $.ajax({
+                    url: 'my_method.php',
+                    type: 'GET'
+                });
+            }, 5000);
+        });
+        </script>
 </body>
 </html>

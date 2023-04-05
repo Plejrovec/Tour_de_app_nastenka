@@ -22,8 +22,19 @@ body{
   text-align: center;
 }
 .programatori{
+  display: flex;
   border: 5px solid darkgreen;
+  margin: 1rem; 
+  width: 90%;
+}
+.programatori p{
+  margin: 2rem;
 }
 .commity{
   border: 5px solid darkgreen;
+  margin: 1rem;
+}
+
+img {
+  margin: 1rem;
 }
